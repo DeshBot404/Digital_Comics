@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>Contact us</title>
+<style>
+body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg2.webp);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.banner2 {
+  width: 80%;
+  min-height: 8%;
+  max-height: 80%;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  border: 2px inset red;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top:-2%;
+}
+
+#dc {
+  font-family: Chiller;
+  font-size: 50px;
+  color: red;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+ 
+}
+
+.navbar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar ul li a:hover
+{
+color:red;
+}
+
+.font {
+  font-family: Chiller;
+  font-size: 1.5vw;
+  color: white;
+  text-indent: 20px;
+}
+
+#red {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    text-align: center;
+    padding-top: 20px;
+  }
+  .navbar ul li {
+    display: block;
+    margin: 10px auto;
+  }
+  .navbar ul li::after {
+    display: none;
+  }
+
+}
+.button-container {
+      text-align: center;
+   margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .email-button {
+      background-color: #009688;
+    }
+
+    .call-button {
+      background-color: #ff5722;
+    }
+	.email-button:hover{
+	font-size:1.5vw;
+	}
+		.call-button:hover{
+	font-size:1.5vw;
+	}
+.main{
+margin-left:10%;
+display:flex;
+border: 2px dotted red;
+align-items:center;
+padding:10px;
+width:80%;
+background-color:rgba(219, 200, 210, 0.35);
+}
+        @media screen and (max-width: 1024px) {
+            .main {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+				width:100%;
+            }
+            .main img {
+                margin-bottom: 20px;
+				height:150%;
+				width:80%;
+            }
+            .main span {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+				font-size:6vw;
+            }
+        }
+
+</style>
+</head>
+<body>
+<div class="navbar">
+     <h2 id="dc">Dash Comics</h2>
+<ul>
+  <li><a href="ComicMain.html">Home</a></li>
+  <li><a href="Buycomics.html">Buy comics</a></li>
+  <li><a href="Readcomics.html">Read comics</a></li>
+  <li><a href="Aboutus.html">About us</a></li>
+  <li><a href="Contactus.html">Contact us</a></li>
+</ul>
+</div>
+</div>
+<center>
+<div class="banner2">
+<p class="font">
+
+</p>
+<marquee class="font"><span id="red">OFFER!!!!!</span>  (September-December) Read comics for free!! for all standard first copy specimens <span id="red">OFFER!!!!!</span>  (September-December) Read comics for free!! for all standard first copy specimens</marquee></div>
+
+</center>
+<br>
+<div class="main">
+<img src="contact.png" width="300" height="300">
+   &nbsp &nbsp &nbsp  &nbsp &nbsp<span> <a class="button email-button" href="mailto:dashiya111gmail.com">Email Us</a>&nbsp &nbsp &nbsp &nbsp
+    <a class="button call-button" href="tel:+123456789">Call Us</a></span>
+  </div>
+
+
+</body>
+</html>

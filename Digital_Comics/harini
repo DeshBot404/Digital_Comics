@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EX 9</title>
+	<style>
+		form{
+			margin-top:100px;
+		}
+		form label,input{
+			margin:10px;
+		}
+		input[type="text"]{
+		
+		}
+	</style>
+</head>
+
+<body>
+	<center>
+<form onsubmit="return validateForm()" >
+	<lable for="name">First name</label>
+	<input type="text" id="fname"  onChange="func2('fname')" required />*<br>
+	<lable for="lname">Last name</label>
+	<input type="text" id="lname"  oninput="func2('lname')" required />*<br>
+	<lable for="father">Father name</label>
+	<input type="text" id="father"  onChange="func1()"  oninput="func2('father')" required />*<br>
+	<lable for="dob" onChange="func1()">DOB</label>
+	<input type="date" id="dob" required/>*<br>
+	<lable for="tel">Tel</label>
+	<input type="text" id="tel" required oninput="func3()"/>*<br>
+	<lable for="schl">High School Name</label>
+	<input type="text" id="schl" required/>*<br>
+	<lable for="name">First name</label>
+	<input type="text" id="fname" required/>*<br>
+	<lable for="add">Address</lable></label>
+	<input type="text" id="add" required/>*<br>
+	<lable for="level">Your Level</label>
+	<select type="text" id="level">
+	<option>1st Year</option>
+	<option>2nd Year</option>
+	<option>3rd Year</option>
+	</select>*<br>
+	<lable for="mail">Email </lable></label>
+	<input type="text" id="mail" required/>*<br>
+    <lable for="degree">Degree Program </label>
+	<input type="text" id="degree" required/>*<br><br>
+	<input type="submit" id="subit" value="submit" >
+	</form>
+    </center>
+ <script>
+function func1() {
+    var a = document.getElementById("lname");
+    var b = document.getElementById("father");
+
+    if (a.value !== b.value) {
+        alert("Father name and last name should be the same");
+        a.style.border = "1px solid red";
+        b.style.border = "1px solid red";
+        return false; // Prevent form submission
+    } else {
+        a.style.border = "";
+        b.style.border = "";
+        return true; // Allow form submission
+    }
+}
+
+function func2(b) {
+    var field = document.getElementById(b);
+    var pattern = /^[A-Za-z]+$/;
+    
+    if (!pattern.test(field.value)) {
+        field.setCustomValidity("Please enter only alphabetic characters.");
+        field.style.border = "1px solid red";
+        field.style.backgroundColor = "red"; 
+        return false; // Prevent form submission
+    } else {
+        field.setCustomValidity("");
+        field.style.border = "";
+        field.style.backgroundColor = ""; 
+        return true; // Allow form submission
+    }
+}
+
+function func3() {
+    var a = document.getElementById("tel");
+    var pattern = /^[0-9]{10}$/;
+
+    if (!pattern.test(a.value)) {
+        document.getElementById("tel").setCustomValidity("Please enter only 10 numbers.");
+        a.style.border = "1px solid red";
+        a.style.backgroundColor = "red"; 
+        return false; // Prevent form submission
+    } else {
+        document.getElementById("tel").setCustomValidity("");
+        a.style.border = "";
+        a.style.backgroundColor = ""; 
+        return true; // Allow form submission
+    }
+}
+	 function validateForm(){
+		 alert("Successfully submitted!!!!!");
+	 }
+
+</script>
+</body>
+</html>

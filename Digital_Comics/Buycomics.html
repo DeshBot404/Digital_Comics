@@ -1,0 +1,468 @@
+<html>
+<head>
+<meta name="viwport" content="width=device-width , initial-scale=1.0">
+<title>Buy comics</title>
+<style>
+body {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+ background-size:fixed;
+ background-position:center;
+  }
+@media only screen and (max-width: 768px) {
+  body {
+     background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+ background-size:cover;
+ background-position:center;
+  }
+}
+ 
+.menubar{
+
+display: flex;
+justify-content: space-between;
+align-items:center;
+}
+ul li{
+list-style:none;
+display:inline-block;
+padding:20px;
+}
+ul li a
+{
+text-decoration:none;
+color:white;
+text-transform:uppercase;
+}
+ul li a:hover
+{
+color:red;
+}
+.font
+  {
+  font-family:Chiller;
+  font-size: 3vw;
+  color:red;
+  cursor:pointer;
+  }
+.font1
+  {
+ font-size:2vw;
+  font-family:Constantia;
+  cursor:pointer;
+  color:red;
+  }
+.font2{
+  font-family:Constantia;
+  color:white;
+  cursor:pointer;
+  font-size:2vw;
+  }
+  .font3{
+  font-family:Segoe UI Black;
+  font-size:3vw;
+  color:white;
+  cursor:pointer;
+  }
+label{
+ font-family:Times New Roman;
+ font-size:1.5vw;
+ color:blue;
+ }
+input[type]
+{
+border:1px solid white;
+padding:5px;
+border-radius:10px;
+background:transparent;
+color:white;
+}
+table{
+color:white;
+}
+#p1,#p2,#p3,#p4,#p5,#p6,#p7
+{
+color:red;
+}
+</style>
+</head>
+<body>
+<div class="menubar">
+<h1 class="font">Dash Comics</h1>
+<ul>
+  <li><a href="ComicMain.html">Home</a></li>
+  <li><a href="#">Buy comics</a></li>
+  <li><a href="Readcomics.html">Read comics</a></li>
+  <li><a href="Aboutus.html">About us</a></li>
+  <li><a href="Contactus.html">Contact us</a></li>
+</ul>
+</div>
+<div class="main">
+<center>
+<table border="1" cellspacing="20" cellpadding="20">
+<tr>
+<td>
+<img src="superman.jpeg" width="180" height="279"></a> 
+</td>
+<td><h1 class="font1">SuperMan<br>
+<h2 class="font2">Price : $19 </h2>
+<p>Author's Description:  They name the boy Clark and raise him as their own. As a child, Clark exhibits a collection of superhuman powers—invulnerability, incredible strength, the ability to leap incredible distances, and super speed—that would later become the hallmarks of his alter ego, Superman, the “Man of Steel.”</p>
+</td>
+<td><label for="quantity7">Quantity<br><input type="number" id="quantity7" oninput="checkQuantity7()"><br><br>
+<label for="price7">Price<br><input type="text" id="price7" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart7()">
+<p id="p7"></p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="thor.jpeg" width="180" height="279"></a> 
+</td>
+<td><h1 class="font1">Thor<br>
+<h2 class="font2">Price : $14 </h2>
+<p>Thor is a prominently mentioned god throughout the recorded history of the Germanic peoples, from the Roman occupation of regions of Germania, to the Germanic expansions of the Migration Period, to his high popularity during the Viking Age, when, in the face of the process of the Christianization of Scandinavia, emblems of his hammer, Mjölnir, were worn and Norse pagan personal names containing the name of the god bear witness to his popularity..</p>
+</td>
+<td><label for="quantity6">Quantity<br><input type="number" id="quantity6"  oninput="checkQuantity6()"><br><br>
+<label for="price6">Price<br><input type="text" id="price6" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart6()">
+<p id="p6"></p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="b7.webp" width="180" height="279"></a>
+</td>
+<td><h1 class="font1">IronMan<br>
+<h2 class="font2">Price : $37 </h2>
+<p>Iron Man is a superhero appearing in American comic books published by Marvel Comics. Co-created by writer and editor Stan Lee, developed by scripter Larry Lieber, and designed by artists Don Heck and Jack Kirby, the character first appeared in Tales of Suspense #39 in 1963, and received his own title with Iron Man #1 in 1968. Shortly after his creation, Iron Man was a founding member of a superhero team, the Avengers, with Thor, Ant-Man, Wasp and the Hulk. Iron Man stories, individually and with the Avengers, have been published consistently since the character's creation.</p>
+</td>
+<td><label for="quantity5">Quantity<br><input type="number" id="quantity5"  oninput="checkQuantity5()"><br><br>
+<label for="price5">Price<br><input type="text" id="price5" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart5()">
+<p id="p5"></p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="b6.jpg" width="180" height="279">
+</td>
+<td><h1 class="font1">BatMan<br>
+<h2 class="font2">Price : $26 </h2>
+<p>Batman is a superhero appearing in American comic books published by DC Comics. The character was created by artist Bob Kane and writer Bill Finger, and debuted in the 27th issue of the comic book Detective Comics on March 30, 1939. In the DC Universe continuity, Batman is the alias of Bruce Wayne, a wealthy American playboy, philanthropist, and industrialist who resides in Gotham City. Batman's origin story features him swearing vengeance against criminals after witnessing the murder of his parents Thomas and Martha as a child, a vendetta tempered with the ideal of justice.</p>
+</td>
+<td><label for="quantity4">Quantity<br><input type="number" id="quantity4"  oninput="checkQuantity4()"><br><br>
+<label for="price4">Price<br><input type="text" id="price4" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart4()">
+<p id="p4"></p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="b5.webp" width="180" height="279">
+</td>
+<td><h1 class="font1">Hulk<br>
+<h2 class="font2">Price : $30 </h2>
+<p>The Hulk is a superhero appearing in American comic books published by Marvel Comics. Created by writer Stan Lee and artist Jack Kirby, the character first appeared in the debut issue of The Incredible Hulk (May 1962). In his comic book appearances, the character, who has dissociative identity disorder (DID), is primarily represented by the alter ego Hulk, a green-skinned, hulking and muscular humanoid possessing a limitless degree of physical strength, and the alter ego Dr. Robert Bruce Banner, a physically weak, socially withdrawn, and emotionally reserved physicist, both of whom typically resent each other.</p>
+</td>
+<td><label for="quantity3">Quantity<br><input type="number" id="quantity3" oninput="checkQuantity3()"><br><br>
+<label for="price3">Price<br><input type="text" id="price3" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart3()">
+<p id="p3"></p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="b4.jfif" width="180" height="279"></a>
+</td>
+<td><h1 class="font1">Captain America<br>
+<h2 class="font2">Price : $17 </h2>
+<p>Captain America is a superhero created by Joe Simon and Jack Kirby who appears in American comic books published by Marvel Comics. The character first appeared in Captain America Comics #1, published on December 20, 1940 by Timely Comics, a corporate predecessor to Marvel. Captain America's civilian identity is Steve Rogers, a frail man enhanced to the peak of human physical perfection by an experimental "super-soldier serum" after joining the United States Army to aid the country's efforts in World War II.</p>
+</td>
+<td><label for="quantity2">Quantity<br><input type="number" id="quantity2"  oninput="checkQuantity2()"><br><br>
+<label for="price2">Price<br><input type="text" id="price2" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart2()">
+<p id="p2"></p>
+</td>
+</tr>
+<tr>
+<td>
+<img src="b1.jfif" width="180" height="279">
+</td>
+<td><h1 class="font1">Spider_man Multiverse<br>
+<h2 class="font2">Price : $22 </h2>
+<p>Author's Description :  Spider-Man is a superhero appearing in American comic books published by Marvel Comics. Created by writer-editor Stan Lee and artist Steve Ditko, he first appeared in the anthology comic book Amazing Fantasy #15 (August 1962) in the Silver Age of Comic Books. He has been featured in comic books, television shows, films, video games, novels, and plays.</p>
+</td>
+<td><label for="quantity1">Quantity<br><br><input type="number" id="quantity1" oninput="checkQuantity1()"><br><br>
+<label for="price1">Price(in dollars)<br><br><input type="text" id="price1" disabled>
+<input type="button" value="Add to Cart🛒" onclick="addtocart1()">
+<p id="p1"></p>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<center>
+<h2 class="font3">Your Cart🛒</h2>
+<div class="cart">
+<table border="1" cellspacing="10" cellpadding="10">
+<tr>
+<th>Product</th>
+<th>Quantity</th>
+<th>Price</th>
+</tr>
+<tr>
+  <td><p id="g1"></p></td>
+  <td><p id="g2"></p></td>
+  <td><p id="g3"></p></td>
+</tr>
+<tr>
+  <td><p id="f1"></p></td>
+  <td><p id="f2"></p></td>
+  <td><p id="f3"></p></td>
+</tr>
+
+<tr>
+  <td><p id="e1"></p></td>
+  <td><p id="e2"></p></td>
+  <td><p id="e3"></p></td>
+</tr>
+
+
+<tr>
+  <td><p id="d1"></p></td>
+  <td><p id="d2"></p></td>
+  <td><p id="d3"></p></td>
+</tr>
+<tr>
+  <td><p id="c1"></p></td>
+  <td><p id="c2"></p></td>
+  <td><p id="c3"></p></td>
+</tr>
+<tr>
+  <td><p id="b1"></p></td>
+  <td><p id="b2"></p></td>
+  <td><p id="b3"></p></td>
+</tr>
+<tr>
+  <td><p id="a1"></p></td>
+  <td><p id="a2"></p></td>
+  <td><p id="a3"></p></td>
+</tr>
+<tr>
+ <td> <input type="button" onclick="checkTotal()" value="Total Price"></td>
+ <td><input type="text" id="totalprice" disabled></td>
+ <td><a href="payment.html">Checkout</a></td>
+</tr>
+</table>
+</div>
+</center>
+<script>
+
+function checkQuantity1() {
+  var inputnum = Number(document.getElementById("quantity1").value);
+  document.getElementById("price1").value = inputnum * 22;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p1").innerHTML = "Quantity must be between 1 and 3.";
+    return false;
+  } else {
+    document.getElementById("p1").innerHTML = "Product(s) are ready to checkout";
+    return true;
+  }
+}
+function checkQuantity2() {
+  var inputnum = Number(document.getElementById("quantity2").value);
+  document.getElementById("price2").value = inputnum * 17;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p2").innerHTML = "Quantity must be between 1 and 3.";
+    return false;
+  } else {
+    document.getElementById("p2").innerHTML = "Product(s) are ready to checkout";
+    return true;
+  }
+}
+function checkQuantity3() {
+  var inputnum = Number(document.getElementById("quantity3").value);
+  document.getElementById("price3").value = inputnum * 30;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p3").innerHTML = "Quantity must be between 1 and 3.";
+    return false;
+  } else {
+    document.getElementById("p3").innerHTML = "Product(s) are ready to checkout";
+    return true;
+  }
+}
+function checkQuantity4() {
+  var inputnum = Number(document.getElementById("quantity4").value);
+  document.getElementById("price4").value = inputnum * 26;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p4").innerHTML = "Quantity must be between 1 and 3.";
+    return false;
+  } else {
+    document.getElementById("p4").innerHTML = "Product(s) are ready to checkout";
+    return true;
+  }
+}
+function checkQuantity5() {
+  var inputnum = Number(document.getElementById("quantity5").value);
+  document.getElementById("price5").value = inputnum * 37;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p5").innerHTML = "Quantity must be between 1 and 3.";
+    return false;
+  } else {
+    document.getElementById("p5").innerHTML = "Product(s) are ready to checkout";
+    return true;
+  }
+}
+function checkQuantity6() {
+  var inputnum = Number(document.getElementById("quantity6").value);
+  document.getElementById("price6").value = inputnum * 14;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p6").innerHTML = "Quantity must be between 1 and 3.";
+    return false;
+  } else {
+    document.getElementById("p6").innerHTML = "Product(s) are ready to checkout";
+    return true;
+  }
+}
+function checkQuantity7() {
+  var inputnum = Number(document.getElementById("quantity7").value);
+  document.getElementById("price7").value = inputnum * 19;
+  if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p7").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;
+  } else {
+    document.getElementById("p7").innerHTML = "Product(s) are ready to add in cart";
+    return true;
+  }
+}
+function addtocart1()
+{
+ var inputnum = Number(document.getElementById("quantity1").value);
+  var inputprice = Number(document.getElementById("price1").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p1").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("a1").innerHTML= "Spiderman";
+ document.getElementById("a2").innerHTML=inputnum;
+  document.getElementById("a3").innerHTML=inputprice;
+  document.getElementById("p1").innerHTML = "Added to cart successfully";
+ }
+ }
+ function addtocart2()
+{
+ var inputnum = Number(document.getElementById("quantity2").value);
+  var inputprice = Number(document.getElementById("price2").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p2").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("b1").innerHTML= "Captain America";
+ document.getElementById("b2").innerHTML=inputnum;
+  document.getElementById("b3").innerHTML=inputprice;
+  document.getElementById("p2").innerHTML = "Added to cart successfully";
+ }
+ }
+ function addtocart3()
+{
+ var inputnum = Number(document.getElementById("quantity3").value);
+  var inputprice = Number(document.getElementById("price3").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p3").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("c1").innerHTML= "Hulk";
+ document.getElementById("c2").innerHTML=inputnum;
+  document.getElementById("c3").innerHTML=inputprice;
+  document.getElementById("p3").innerHTML = "Added to cart successfully";
+ }
+ }
+ function addtocart4()
+{
+ var inputnum = Number(document.getElementById("quantity4").value);
+  var inputprice = Number(document.getElementById("price4").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p4").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("d1").innerHTML= "Batman";
+ document.getElementById("d2").innerHTML=inputnum;
+  document.getElementById("d3").innerHTML=inputprice;
+  document.getElementById("p4").innerHTML = "Added to cart successfully";
+ }
+ }
+ function addtocart5()
+{
+ var inputnum = Number(document.getElementById("quantity5").value);
+  var inputprice = Number(document.getElementById("price5").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p5").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("e1").innerHTML= "IronMan";
+ document.getElementById("e2").innerHTML=inputnum;
+  document.getElementById("e3").innerHTML=inputprice;
+  document.getElementById("p5").innerHTML = "Added to cart successfully";
+ }
+ }
+ 
+function addtocart6()
+{
+ var inputnum = Number(document.getElementById("quantity6").value);
+  var inputprice = Number(document.getElementById("price6").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p6").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("f1").innerHTML= "Thor";
+ document.getElementById("f2").innerHTML=inputnum;
+  document.getElementById("f3").innerHTML=inputprice;
+  document.getElementById("p6").innerHTML = "Added to cart successfully";
+ }
+ }
+ 
+
+function addtocart7()
+{
+ var inputnum = Number(document.getElementById("quantity7").value);
+  var inputprice = Number(document.getElementById("price7").value);
+   if(isNaN(inputnum) || inputnum < 1 || inputnum > 3) { 
+    document.getElementById("p7").innerHTML = "Quantity must be between 1 and 3.";
+	inputnum.focus();
+    return false;}
+	else
+{
+ document.getElementById("g1").innerHTML= "SuperMan";
+ document.getElementById("g2").innerHTML=inputnum;
+  document.getElementById("g3").innerHTML=inputprice;
+  document.getElementById("p7").innerHTML = "Added to cart successfully";
+ }
+ }
+ 
+  function checkTotal() {
+  var inputprice1 = Number(document.getElementById("a3").innerHTML);
+  var inputprice2 = Number(document.getElementById("b3").innerHTML);
+  var inputprice3 = Number(document.getElementById("c3").innerHTML);
+  var inputprice4 = Number(document.getElementById("d3").innerHTML);
+  var inputprice5 = Number(document.getElementById("e3").innerHTML);
+  var inputprice6 = Number(document.getElementById("f3").innerHTML);
+  var inputprice7 = Number(document.getElementById("g3").innerHTML);
+
+  var total = inputprice1 + inputprice2 + inputprice3 + inputprice4 + inputprice5 + inputprice6 + inputprice7;
+  document.getElementById("totalprice").value = total;
+}
+ </script>
+</body>
+</html>

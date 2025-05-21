@@ -1,0 +1,144 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg2.webp);
+ background-size:cover;
+ background-position:center;
+ 
+ }
+ @media only screen and (max-width:768px)
+ {
+ body
+ {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg2.webp);
+ background-size:cover;
+ background-position:center;
+ }
+ }
+ 
+ 
+.menubar{
+
+display: flex;
+justify-content: space-between;
+align-items:center;
+}
+ul li{
+list-style:none;
+display:inline-block;
+padding:20px;
+}
+ul li a
+{
+text-decoration:none;
+color:white;
+text-transform:uppercase;
+}
+ul li a:hover
+{
+color:red;
+}
+.font
+  {
+  font-family:Chiller;
+  font-size: 4vw;
+  color:red;
+  cursor:pointer;
+  margin-left:5%;
+  }
+.font2
+  {
+  font-family:Chiller;
+  font-size: 6vw;
+  color:white;
+  cursor:pointer;
+  margin-left:38%;
+  margin-top:-5%;
+  }
+.font3{
+  font-family:Segoe UI Black;
+  font-size:3vw;
+  color:white;
+  cursor:pointer;
+  }
+.main{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-left:2%;
+}
+button{
+  width:200px;
+  padding:15px 0;
+  text-align:center;
+  margin:20px 10px;
+  border-radius:25px;
+  font-weight:bold;
+  border:2px solid red;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+  }
+button:hover{
+  background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
+ 
+  }
+   @media only screen and (max-width:768px) {
+  /* For mobile phones: */
+   .main{
+    width:100%;
+	display:inline-block;
+	justify-content;space-between;
+	align-items:center;
+  }
+ 
+@media only screen and (max-width: 600px) {
+  .menubar ul li
+  {
+  list-style:none;
+  display:inline-block;
+  align-items:center;
+  justify-contetn:space-between;
+  margin:0px 5px;
+  position: relative;
+  font-family:Chiller;
+  color:white;
+  font-size: 2vw;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="menubar">
+<h1 class="font">Dash Comics</h1>
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="Buycomics.html">Buy comics</a></li>
+  <li><a href="Readcomics.html">Read comics</a></li>
+  <li><a href="Aboutus.html">About us</a></li>
+  <li><a href="Contactus.html">Contact us</a></li>
+</ul>
+</div>
+
+
+<center>
+<h1 class="font">Dash comics</h1>
+</center>
+<h1 class="font2">Welcomes you</h1>
+<h1 class="font3">New Releases of the week!</h1>
+<div class="main">
+<a href="Spiderman.html"><img src="b1.jfif" width="180" height="279"></a>
+<a href="capamerica.html"><img src="b4.jfif" width="180" height="279"></a>
+<a href="hulk.html"><img src="b5.webp" width="180" height="279"></a>
+<a href="batman.html"><img src="b6.jpg" width="180" height="279"></a>
+<a href="ironman.html"><img src="b7.webp" width="180" height="279"></a>
+</div><br>
+<div class="buttons">
+<center>
+<a href="Readcomics.html" id="See more"><button>See more</button></a>
+</center>
+ </body>
+ </html>

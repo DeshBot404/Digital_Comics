@@ -1,0 +1,531 @@
+//Login page
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+body {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+ background-size:cover;
+ background-position:center;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+     background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+     background-size:cover;
+     background-position:center;
+  }
+}
+
+.main {
+ margin-top:2%;
+ border:0px solid black;
+ border-radius:10px;
+ display:inline-block;
+ padding:50px;
+ box-shadow:1px 1px 18px 5px #888888;
+}
+
+input[type="text"], input[type="password"] {
+  border:1px solid white;
+  color:white;
+  background:transparent;
+  padding:10px;
+  border-radius:10px;
+}
+
+input[type="submit"] {
+  border:1px solid white;
+  color:red;
+  background:transparent;
+  padding:10px;
+  border-radius:10px;
+}
+
+#p2, #p1 {
+  color:white;
+}
+
+label {
+  color:red;
+  font-family:Segoe UI Black;
+}
+
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+ul li {
+  list-style:none;
+  display:inline-block;
+  padding:20px;
+}
+
+ul li a {
+  text-decoration:none;
+  color:white;
+  text-transform:uppercase;
+}
+
+ul li a:hover {
+  color:red;
+}
+
+.font {
+  font-family:Chiller;
+  font-size: 3vw;
+  color:red;
+  cursor:pointer;
+}
+
+.font2 {
+  font-family:Chiller;
+  font-size: 2vw;
+  color:white;
+  cursor:pointer;
+}
+
+.font3 {
+  font-family:Segoe UI Black;
+  font-size:1.5vw;
+  color:white;
+  cursor:pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .menubar ul li {
+    list-style:none;
+    display:inline-block;
+    align-items:center;
+    justify-content:space-between;
+    margin:0px 5px;
+    position: relative;
+    color:white;
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .main {
+    padding: 10%;
+  }
+
+  input[type="text"], input[type="password"], input[type="submit"] {
+    width: 100%;
+  }
+
+  .font, .font2, .font3 {
+    font-size: 1em;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="menubar">
+  <h1 class="font">Dash Comics</h1>
+  <ul>
+    <li><a href="ComicMain">Home</a></li>
+    <li><a href="Buycomics.html">Buy comics</a></li>
+    <li><a href="Readcomics.html">Read comics</a></li>
+    <li><a href="Aboutus.html">About us</a></li>
+    <li><a href="Contactus.html">Contact us</a></li>
+  </ul>
+</div>
+
+<center>
+  <div class="main">
+    <form onsubmit="return validateForm()">
+        <p id="p1"></p>
+        <p id="p2"></p>			
+        <label for="username">Username[5-7]</label> &nbsp &nbsp
+        <input type="text" id="username" name="username" pattern="[A-Za-z0-9]{5,7}" onchange="validateUname()">
+        <br>
+        <br>
+        <label for="passwrd">Password[5-12]</label> &nbsp &nbsp
+        <input type="password" id="passwrd" name="passwrd" pattern="[A-Za-z0-9]{5,12}" onchange="validatePassword()">
+        <br><br>
+        <input type="submit" value="Login" name="Login" id="Login">
+    </form>
+  </div>
+  <h2 class="font3">New User? &nbsp &nbsp<a href="signup.html">Sign up</a></h2>
+</center>
+
+<script>
+function validateForm() {
+  var inputname = document.getElementById("username");
+  var inputpass = document.getElementById("passwrd");
+
+  var p1 = document.getElementById("p1");
+  var p2 = document.getElementById("p2");
+
+  p1.innerHTML = "";
+  p2.innerHTML = "";
+
+  if (inputname.value == "" && inputpass.value == "") {
+    p1.innerHTML = "*Username is required *Password is required";
+	inputname.style.border = "2px solid blue";
+	inputpass.style.border = "2px solid blue";
+    return false;
+  } 
+
+   if (inputname.value == "") {
+    p1.innerHTML = "*Username is required";
+	inputname.style.border = "2px solid blue";
+    return false;
+  }
+
+  if (inputpass.value == "") {
+    p1.innerHTML = "*Password is required";
+	inputpass.style.border = "2px solid blue";
+    return false;
+  }
+   var inputname1 = document.getElementById("username").value;
+  alert("Welcome " + inputname1 + "! Logged in successfully");
+  return true;
+}
+
+
+function validateUname() {
+  var inputname = document.getElementById("username");
+  var inputpass = document.getElementById("passwrd");
+  if (!inputname.checkValidity() && inputpass.value == "" ) {
+    document.getElementById("p1").innerHTML = "*Username must be between 5 to 7 characters";
+	document.getElementById("p2").innerHTML = "Password is required";
+	inputname.style.border = "2px solid blue";
+	inputpass.style.border = "2px solid blue";
+    return false;
+  } 
+  else if(!inputname.checkValidity())
+  {
+  document.getElementById("p1").innerHTML = "*Username must be between 5 to 7 characters";
+  inputname.style.border = "2px solid blue";
+  return false;
+  }
+  else {
+        document.getElementById("p1").innerHTML = "";
+		  inputname.style.border = "";
+    return true;
+  }
+}
+
+function validatePassword() {
+  var inputpass = document.getElementById("passwrd");
+  var inputname = document.getElementById("username");
+  if (!inputpass.checkValidity() && inputname.value == "") {
+  document.getElementById("p1").innerHTML = "Username is required";
+    document.getElementById("p2").innerHTML = "*Password must be between 5 to 12 characters";
+	inputname.style.border = "2px solid blue";
+		inputpass.style.border = "2px solid blue";
+   
+    return false;
+  }
+  else if(!inputpass.checkValidity())
+  {
+  document.getElementById("p2").innerHTML = "*Password must be between 5 to 12 characters";
+  	inputpass.style.border = "2px solid blue";
+    return false;
+   
+  }
+  
+  else {
+          document.getElementById("p2").innerHTML = "";
+		  inputpass.style.border = "";
+    return true;
+  }
+}
+
+</script>
+
+</body>
+</html>
+ 
+ //signup page
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+body {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+ background-size:cover;
+ background-position:center;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+     background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+     background-size:cover;
+     background-position:center;
+  }
+}
+
+.main {
+ margin-top:2%;
+ border:0px solid black;
+ border-radius:10px;
+ display:inline-block;
+ padding:50px;
+ box-shadow:1px 1px 18px 5px #888888;
+}
+
+input[type] {
+  border:1px solid white;
+  color:white;
+  background:transparent;
+  padding:10px;
+  border-radius:10px;
+}
+
+input[type='submit'] {
+  color:red;
+  border-radius:0px;
+  font-family:Copperplate Gothic Bold;
+}
+
+
+#p1,#p2,#p3,#p4,#p5 {
+  color:white;
+  
+}
+
+label {
+  color:red;
+  font-family:Segoe UI Black;
+}
+
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+ul li {
+  list-style:none;
+  display:inline-block;
+  padding:20px;
+}
+
+ul li a {
+  text-decoration:none;
+  color:white;
+  text-transform:uppercase;
+}
+
+ul li a:hover {
+  color:red;
+}
+
+.font {
+  font-family:Chiller;
+  font-size: 3vw;
+  color:red;
+  cursor:pointer;
+}
+
+.font2 {
+  font-family:Chiller;
+  font-size: 2vw;
+  color:white;
+  cursor:pointer;
+}
+
+.font3 {
+  font-family:Segoe UI Black;
+  font-size:1.5vw;
+  color:white;
+  cursor:pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .menubar ul li {
+    list-style:none;
+    display:inline-block;
+    align-items:center;
+    justify-content:space-between;
+    margin:0px 5px;
+    position: relative;
+    color:white;
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .main {
+    padding: 10%;
+  }
+
+  input[type], input[type='submit'] {
+    width: 100%;
+  }
+
+  .font, .font2, .font3 {
+    font-size: 1em;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="menubar">
+  <h1 class="font">Dash Comics</h1>
+  <ul>
+    <li><a href="ComicMain.html">Home</a></li>
+    <li><a href="Buycomics.html">Buy comics</a></li>
+    <li><a href="Readcomics.html">Read comics</a></li>
+    <li><a href="Aboutus.html">About us</a></li>
+    <li><a href="Contactus.html">Contact us</a></li>
+  </ul>
+</div>
+
+<center>
+<div class="main">
+<p id="p1"></p><br>
+    <form onsubmit="return validateForm()">
+      <label for="username">Username</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      <input type="text" id="username" name="username" pattern="[A-Za-z0-9]{5,7}" onchange="validateUname()">
+      <p id="p1"></p><br>
+      <label for="passwrd">Password</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+      <input type="password" id="passwrd" name="passwrd" pattern="[A-Za-z0-9]{5,12}"  onchange="validatePassword()">
+      <p id="p2"></p>
+      <br>
+      <label for="passwrd2">Confirm Password</label> &nbsp &nbsp <!-- Fixed label text -->
+      <input type="password" id="passwrd2" name="passwrd2"  onchange="validateConfirm()">
+      <p id="p3"></p><br>
+	  <label for="email1">Email</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+      <input type="email" id="email1" name="email1" onchange="validateEmail()"> 
+      <p id="p4"></p>
+      <br>
+	  <label for="phno">Contact number</label> &nbsp &nbsp &nbsp  &nbsp 
+      <input type="text" id="phno" name="phno" pattern="[0-9]{10}" onchange="validateContact()"> 
+      <p id="p5"></p><br>
+
+      <input type="submit" value="Sign Up" name="SignUp" id="SignUp">
+    </form>
+  </div>
+  <h2 class="font3">Existing user? &nbsp &nbsp<a href="login.html">Log In</a></h2>
+</center>
+
+<script>
+function validateForm() {
+  var inputname = document.getElementById("username");
+  var inputpass = document.getElementById("passwrd");
+  var inputpass2 = document.getElementById("passwrd2");
+  var inputemail=document.getElementById("email1");
+  var inputcontact=document.getElementById("phno");
+  if(inputname.value =="")
+  {
+  document.getElementById("p1").innerHTML="*username is required";
+  inputname.style.border = "2px solid blue";
+  return false;
+  }
+    if(inputpass.value =="")
+  {
+  document.getElementById("p1").innerHTML="*password is required";
+  inputpass.style.border = "2px solid blue";
+  return false;
+  }
+      if(inputpass2.value =="")
+  {
+  document.getElementById("p1").innerHTML="*confirm password is required";
+  inputpass2.style.border = "2px solid blue";
+  return false;
+  }
+    if(inputemail.value =="")
+  {
+  document.getElementById("p1").innerHTML="*email is required";
+  inputemail.style.border = "2px solid blue";
+  return false;
+  }
+    if(inputcontact.value =="")
+  {
+  document.getElementById("p1").innerHTML="*contact number is required";
+  inputcontact.style.border = "2px solid blue";
+  return false;
+  }
+
+  var inputname = document.getElementById("username").value;
+  alert("Welcome " + inputname + "! signed up successfully!");
+  return true;
+}
+
+function validateUname() {
+  var inputname = document.getElementById("username");
+  var inputpass = document.getElementById("passwrd");
+  var inputpass2 = document.getElementById("passwrd2").value;
+  if (!inputname.checkValidity()) {
+    document.getElementById("p1").innerHTML = "*Username must be between 5 to 7 characters";
+	inputname.style.border = "2px solid blue";
+    return false;
+  } else {
+   
+    return true;
+  }
+}
+
+function validatePassword() {
+  var inputpass = document.getElementById("passwrd");
+  if (!inputpass.checkValidity()) {
+    document.getElementById("p1").innerHTML = "*Password must be between 5 to 12 characters";
+	inputpass.style.border = "2px solid blue";
+    return false;
+  } else {
+    
+    return true;
+  }
+}
+
+function validateConfirm() {
+  var inputpass1 = document.getElementById("passwrd").value;
+  var inputpass2 = document.getElementById("passwrd2").value;
+  if(inputpass1 !== inputpass2) {
+    document.getElementById("p1").innerHTML = "*Passwords should match";
+	inputpass2.style.border = "2px solid blue";
+    return false;
+  } else {
+    
+    return true;
+  }
+}
+function validateEmail()
+{
+var inputemail=document.getElementById("email1");
+if(!inputemail.checkValidity())
+{
+document.getElementById("p1").innerHTML=inputemail.validationMessage;
+inputemail.style.border = "2px solid blue";
+return false;
+}
+else
+{
+return true;
+}
+}
+function validateContact()
+{
+ inputcontact=document.getElementById("phno");
+ if(!inputcontact.checkValidity())
+ {
+ document.getElementById("p1").innerHTML="*Invalid Contact Number";
+ inputcontact.style.border = "2px solid blue";
+ return false;
+ }
+ else
+ {
+ return true;
+ }
+ }
+
+
+
+</script>
+
+</body>
+</html>
+

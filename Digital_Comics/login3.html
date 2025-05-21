@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+body {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+ background-size:cover;
+ background-position:center;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+     background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+     background-size:cover;
+     background-position:center;
+  }
+}
+
+.main {
+ margin-top:2%;
+ border:0px solid black;
+ border-radius:10px;
+ display:inline-block;
+ padding:50px;
+ box-shadow:1px 1px 18px 5px #888888;
+}
+
+input[type="text"], input[type="password"] {
+  border:1px solid white;
+  color:white;
+  background:transparent;
+  padding:10px;
+  border-radius:10px;
+}
+
+input[type="submit"] {
+  border:1px solid white;
+  color:red;
+  background:transparent;
+  padding:10px;
+  border-radius:10px;
+}
+
+#p2, #p1 {
+  color:white;
+}
+
+label {
+  color:red;
+  font-family:Segoe UI Black;
+}
+
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+ul li {
+  list-style:none;
+  display:inline-block;
+  padding:20px;
+}
+
+ul li a {
+  text-decoration:none;
+  color:white;
+  text-transform:uppercase;
+}
+
+ul li a:hover {
+  color:red;
+}
+
+.font {
+  font-family:Chiller;
+  font-size: 3vw;
+  color:red;
+  cursor:pointer;
+}
+
+.font2 {
+  font-family:Chiller;
+  font-size: 2vw;
+  color:white;
+  cursor:pointer;
+}
+
+.font3 {
+  font-family:Segoe UI Black;
+  font-size:1.5vw;
+  color:white;
+  cursor:pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .menubar ul li {
+    list-style:none;
+    display:inline-block;
+    align-items:center;
+    justify-content:space-between;
+    margin:0px 5px;
+    position: relative;
+    color:white;
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .main {
+    padding: 10%;
+  }
+
+  input[type="text"], input[type="password"], input[type="submit"] {
+    width: 100%;
+  }
+
+  .font, .font2, .font3 {
+    font-size: 1em;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="menubar">
+  <h1 class="font">Dash Comics</h1>
+  <ul>
+    <li><a href="ComicMain">Home</a></li>
+    <li><a href="Buycomics.html">Buy comics</a></li>
+    <li><a href="Readcomics.html">Read comics</a></li>
+    <li><a href="Aboutus.html">About us</a></li>
+    <li><a href="Contactus.html">Contact us</a></li>
+  </ul>
+</div>
+
+<center>
+  <div class="main">
+    <form onsubmit="return validateForm()">
+        <p id="p1"></p>
+        <p id="p2"></p>			
+        <label for="username">Username[5-7]</label> &nbsp &nbsp
+        <input type="text" id="username" name="username" pattern="[A-Za-z0-9]{5,7}" onchange="validateUname()">
+        <br>
+        <br>
+        <label for="passwrd">Password[5-12]</label> &nbsp &nbsp
+        <input type="password" id="passwrd" name="passwrd" pattern="[A-Za-z0-9]{5,12}" onchange="validatePassword()">
+        <br><br>
+        <input type="submit" value="Login" name="Login" id="Login">
+    </form>
+  </div>
+  <h2 class="font3">New User? &nbsp &nbsp<a href="signup.html">Sign up</a></h2>
+</center>
+
+<script>
+function validateForm() {
+  var inputname = document.getElementById("username");
+  var inputpass = document.getElementById("passwrd");
+
+  var p1 = document.getElementById("p1");
+  var p2 = document.getElementById("p2");
+
+  p1.innerHTML = "";
+  p2.innerHTML = "";
+
+  if (inputname.value == "" && inputpass.value == "") {
+    p1.innerHTML = "*Username is required *Password is required";
+    return false;
+  } 
+
+  else if (inputname.value == "") {
+    p1.innerHTML = "*Username is required";
+    return false;
+  }
+
+  else if (inputpass.value == "") {
+    p1.innerHTML = "*Password is required";
+    return false;
+  }
+  else
+  {
+  var inputname1 = document.getElementById("username");
+  alert(inputname1);
+  return true;
+}
+}
+
+function validateUname() {
+  var inputname = document.getElementById("username");
+  var inputpass = document.getElementById("passwrd");
+  if (!inputname.checkValidity() && inputpass.value == "" ) {
+    document.getElementById("p1").innerHTML = "*Username must be between 5 to 7 characters";
+	document.getElementById("p2").innerHTML = "Password is required";
+    return false;
+  } 
+  else if(!inputname.checkValidity())
+  {
+  document.getElementById("p1").innerHTML = "*Username must be between 5 to 7 characters";
+  return false;
+  }
+  else {
+        document.getElementById("p1").innerHTML = "";
+    return true;
+  }
+}
+
+function validatePassword() {
+  var inputpass = document.getElementById("passwrd");
+  var inputname = document.getElementById("username");
+  if (!inputpass.checkValidity() && inputname.value == "") {
+  document.getElementById("p1").innerHTML = "Username is required";
+    document.getElementById("p2").innerHTML = "*Password must be between 5 to 12 characters";
+    return false;
+  }
+  else if(!inputpass.checkValidity())
+  {
+  document.getElementById("p2").innerHTML = "*Password must be between 5 to 12 characters";
+    return false;
+  }
+  
+  else {
+          document.getElementById("p2").innerHTML = "";
+    return true;
+  }
+}
+
+</script>
+
+</body>
+</html>

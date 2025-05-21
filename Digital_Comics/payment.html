@@ -1,0 +1,136 @@
+<html>
+<head><meta name="viewport" content="width=device-width, initial scale=1.0">
+<title>Payment</title>
+<style>
+body {
+ background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+ }
+ @media only screen and (max-width: 768px) {
+  body {
+     background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(bg4.jpg);
+	 }
+	 }
+ 
+.main{
+margin-top:5%;
+margin-left:35%;
+border:1px solid black;
+padding:5px;
+border-radius:20px;
+width:30%;
+box-shadow:1px 1px 18px 5px #888888;
+
+}
+
+table
+{
+color:white;
+}
+input[type]
+{
+border-radius:10px;
+padding:10px;
+border:1px solid white;
+background:transparent;
+color:white;
+
+}
+#paynow
+{
+border-radius:10px;
+border:1px solid white;
+background:transparent;
+color:white;
+width:20%;
+}
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 90%;
+		margin-left:3%;
+    }
+    .font {
+        font-size: 4vw; /* Adjusted font size for smaller screens */
+    }
+}
+.font{
+margin-top:3%;
+  font-family:Segoe UI Black;
+  font-size:1.5vw;
+  color:white;
+  cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<center><h2 class="font">Back to Home <a href="ComicMain.html">HOME</a></h2></center>
+<div class="main">
+<center>
+<form onsubmit="return validateform()">
+<table cellspacing="20" cellpadding="10">
+<tr>
+<td>
+<label for="email1">Email</label>
+</td>
+<td>
+<input type="email" id="email1" required>
+</td>
+</tr>
+<tr>
+<td>
+<label for="paymentfor">PaymentFor</label>
+</td>
+<td>
+<input type="text" id="paymentfor" value="dashcomics@okhdfc" disabled>
+</td>
+</tr>
+<tr>
+<td>
+<label for="paymenttype">PaymentType</label>
+</td>
+<td>
+<select id="paymenttype" onchange="checkID(this.value)" required>
+<option>please select--</option>
+<option>Net Banking</option>
+<option>UPI ID</option>
+</select>
+</td>
+</tr>
+<tr>
+<td><label for="paymentid" disabled>PaymentID</label></td>
+<td><input type="text" id="paymentid" disabled></td>
+</tr>
+</table>
+<br>
+<input type="submit" value="Pay Now" id="paynow">
+</form>
+</div>
+<script>
+function validateform()
+{
+    var selectedOption = document.getElementById("paymenttype").value;
+    if (selectedOption === "") {
+        alert("Please select a payment type.");
+        return false;
+    }
+	else{
+	alert("Payment done Successfully!! Thanks for buying😊");
+
+}
+}
+function checkID(a) {
+    alert("You have selected " + a + " payment type");
+    var x = prompt("Enter the valid 8-digit" + a + " ID");
+
+    if (!/^\d{8}$/.test(x)) { 
+        alert("Enter a valid 8-digit payment ID");
+		var x = prompt("Enter the " + a + " ID");
+		        document.getElementById("paymentid").value = x;
+    }
+    else {
+        document.getElementById("paymentid").value = x;
+    }
+}
+</script>
+
+</body>
+</html>
